@@ -39,11 +39,11 @@ msy_use <- tmsy %>%
   # Reduce to countries of interest
   filter(country_iso3 %in% sids$iso3) %>% 
   mutate(country=countrycode(country_iso3, "iso3c", "country.name")) %>% 
-  # Reduce to columns of interest
-  # Each country (in this case) only has one EEZ
-  select(rcp, country, country_iso3, year, msy) %>% 
-  rename(msy_mt=msy) %>% 
+  # Summarize MSY by country
+  group_by(rcp, country, country_iso3, year) %>% 
+  summarize(msy_mt=sum(msy, na.rm=T)) %>% 
   # Format columns
+  ungroup() %>% 
   mutate(rcp=recode(rcp, "RCP26"="RCP 2.6", "RCP45"="RCP 4.5", "RCP60"="RCP 6.0", "RCP85"="RCP 8.5"))
 
 # Check that all SID ISO3s are represented
@@ -107,9 +107,14 @@ my_theme <- theme(axis.text=element_text(size=8),
                   panel.background = element_blank(), 
                   axis.line = element_line(colour = "black"))
 
+# Check scenarios
+#########################
+
+# Data
 check <- data_sids_final %>% 
   filter(country=="Antigua & Barbuda")
 
+# Plot
 g <- ggplot(check, aes(x=year, y=catch_mt/1000, color=scenario, group=scenario)) +
   geom_line() +
   facet_wrap(~rcp, ncol=2) +
@@ -118,19 +123,22 @@ g <- ggplot(check, aes(x=year, y=catch_mt/1000, color=scenario, group=scenario))
   theme_bw() + my_theme
 g
 
-# 
+# Export
 ggsave(g, filename=file.path(plotdir, "figure_catch_with_climate_adaptation.png"), 
        width=6.5, height=4.5, units="in", dpi=600)
 
+# Check MSY
+#########################
 
+# Data
 check2 <- msy_use %>% 
   filter(country=="Antigua & Barbuda")
 
-g <- ggplot(check, aes(x=year, y=catch_mt/1000, color=scenario, group=scenario)) +
+# Plot
+g <- ggplot(check2, aes(x=year, y=msy_mt, color=rcp, group=rcp)) +
   geom_line() +
-  facet_wrap(~rcp, ncol=2) +
-  labs(x="", y="Catch (1000s mt)", title="Antigua & Barbuda") +
-  scale_color_discrete(name="Scenario") +
+  labs(x="", y="MSY (mt)", title="Antigua & Barbuda") +
+  scale_color_discrete(name="Climate scenario") +
   theme_bw() + my_theme
 g
   
