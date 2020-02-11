@@ -1,39 +1,39 @@
-region,country_orig,
-Atlantic/Indian Ocean/South China Sea,Bahrain,
-Atlantic/Indian Ocean/South China Sea,Sao Tome and Principe,
-Atlantic/Indian Ocean/South China Sea,Cabo Verde,
-Atlantic/Indian Ocean/South China Sea,Maldives,
-Atlantic/Indian Ocean/South China Sea,Seychelles,
-Atlantic/Indian Ocean/South China Sea,Comoros,
-Atlantic/Indian Ocean/South China Sea,Mauritius ,
-Atlantic/Indian Ocean/South China Sea,Singapore,
-Atlantic/Indian Ocean/South China Sea,Guinea-Bissau,
-Caribbean,Antigua and Barbbuda,
-Caribbean,Dominican Republic,
-Caribbean,Haiti,
-Caribbean,Saint Lucia,
-Caribbean,Bahamas,
-Caribbean,Cuba,
-Caribbean,Grenada,
-Caribbean,Jamaica,
-Caribbean,Saint Vincent and the Grenadines,
-Caribbean,Barbados,
-Caribbean,Dominica,
-Caribbean,Saints Kitts and Nevis,
-Caribbean,Trinidad and Tobago,
-Caribbean,Belize,
-Caribbean,Guyana,
-Caribbean,Suriname,
-Pacific,Fiji,
-Pacific,Micronesia,
-Pacific,Papua New Guinea,
-Pacific,Timor-Leste,
-Pacific,Vanuatu,
-Pacific,Kiribati,
-Pacific,Nauru,
-Pacific,Samoa,
-Pacific,Tonga,
-Pacific,Marshall Islands,
-Pacific,Palau,
-Pacific,Solomon Islands,
-Pacific,Tuvalu,
+region,country_orig
+Atlantic/Indian Ocean/South China Sea,Bahrain
+Atlantic/Indian Ocean/South China Sea,Sao Tome and Principe
+Atlantic/Indian Ocean/South China Sea,Cabo Verde
+Atlantic/Indian Ocean/South China Sea,Maldives
+Atlantic/Indian Ocean/South China Sea,Seychelles
+Atlantic/Indian Ocean/South China Sea,Comoros
+Atlantic/Indian Ocean/South China Sea,Mauritius
+Atlantic/Indian Ocean/South China Sea,Singapore
+Atlantic/Indian Ocean/South China Sea,Guinea-Bissau
+Caribbean,Antigua and Barbbuda
+Caribbean,Dominican Republic
+Caribbean,Haiti
+Caribbean,Saint Lucia
+Caribbean,Bahamas
+Caribbean,Cuba
+Caribbean,Grenada
+Caribbean,Jamaica
+Caribbean,Saint Vincent and the Grenadines
+Caribbean,Barbados
+Caribbean,Dominica
+Caribbean,Saints Kitts and Nevis
+Caribbean,Trinidad and Tobago
+Caribbean,Belize
+Caribbean,Guyana
+Caribbean,Suriname
+Pacific,Fiji
+Pacific,Micronesia
+Pacific,Papua New Guinea
+Pacific,Timor-Leste
+Pacific,Vanuatu
+Pacific,Kiribati
+Pacific,Nauru
+Pacific,Samoa
+Pacific,Tonga
+Pacific,Marshall Islands
+Pacific,Palau
+Pacific,Solomon Islands
+Pacific,Tuvalu
