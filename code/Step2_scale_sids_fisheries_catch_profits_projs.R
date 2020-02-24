@@ -87,7 +87,9 @@ data <- data_orig %>%
 
 
 # Export scaled dataset
-saveRDS(data, file.path(datadir, "sid_total_catch_profit_timeseries_scaled.Rds"))
+write.csv(data, 
+          file.path(datadir, "sid_total_catch_profit_timeseries_scaled.csv"), 
+          row.names = F)
   
 
 
