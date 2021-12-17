@@ -32,6 +32,8 @@ data <- data_orig %>%
   fill(region, .direction="down") %>% 
   # Fix region
   mutate(region=recode(region, "AIS"="Atlantic & Indian\nOceans")) %>% 
+  # Remove Timor-Leste
+  filter(country!="Timor-Leste") %>% 
   # Arrange
   arrange(region, growth_avg) %>% 
   mutate(country=factor(country, levels=country))

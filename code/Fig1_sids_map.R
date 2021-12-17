@@ -14,7 +14,9 @@ datadir <- "data"
 plotdir <- "figures"
 
 # Read data
-country_key <- readRDS(file.path(datadir, "country_key.Rds"))
+country_key <- readRDS(file.path(datadir, "country_key.Rds")) %>% 
+  # Remove Timor-Leste
+  filter(iso3!="TLS")
 
 # Read EEZ data
 eezs_orig <- sf::st_read(dsn="/Users/cfree/Dropbox/Chris/UCSB/data/eezs/World_EEZ_v11_20191118_LR", layer="eez_v11_lowres") 
@@ -62,3 +64,4 @@ g <- ggplot() +
 # Export figure
 ggsave(g, filename=file.path(plotdir, "Fig1_eez_map.png"), 
        width=6.5, height=2.75, units="in", dpi=600)
+

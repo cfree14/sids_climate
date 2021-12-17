@@ -40,6 +40,8 @@ data <- data_orig %>%
                             ifelse(grepl("20-yr", metric), "20-yr adaptation", "Full adaptation")))) %>% 
   # Remove full
   filter(mgmt!="Full adaptation") %>% 
+  # Remove Timor-Leste
+  filter(country!="Timor-Leste") %>% 
   # Code mgmt
   mutate(mgmt=factor(mgmt, levels=c("5-yr adaptation", "10-yr adaptation", "20-yr adaptation"))) %>% 
   # Fix region
