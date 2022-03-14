@@ -34,6 +34,8 @@ data <- data_orig %>%
   fill(region, .direction="down") %>% 
   # Reduce to metric of interest
   filter(grepl("% surplus seafood projected for 2046-2050", metric)) %>% 
+  # Eliminate duplicated 5% scenario - not sure what Lida did here
+  filter(metric!="% surplus seafood projected for 2046-2050 if 5-yr Adaptation...23") %>% 
   # Add mgmt scenario
   mutate(mgmt=ifelse(grepl("5-yr", metric), "5-yr adaptation",
                      ifelse(grepl("10-yr", metric), "10-yr adaptation",
